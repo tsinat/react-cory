@@ -45858,24 +45858,7 @@ var Header = require('./components/common/header');
 (function(win) {
     'use strict';
 
-    var App = React.createClass({displayName: "App",
-        render: function() {
-            var Child;
 
-            switch(this.props.route) {
-                case 'about': Child = About; break;
-                case 'authors': Child = Authors; break;
-                default: Child = Home;
-            }
-
-            return (
-                React.createElement("div", null, 
-                    React.createElement(Header, null), 
-                    React.createElement(Child, null)
-                )
-            );
-        }
-    });
     function render() {
         var route = window.location.hash.substr(1);
         React.render(React.createElement(App, {route: route}), document.getElementById('app'));
